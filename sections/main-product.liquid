@@ -1,0 +1,50 @@
+<section class="product-page u-container">
+  <div class="product-layout">
+    <div class="product-media">
+      {%- if product.featured_image -%}
+        <img
+          src="{{ product.featured_image | image_url: width: 800 }}"
+          alt="{{ product.featured_image.alt | escape }}"
+          loading="lazy"
+          class="product-image"
+        >
+      {%- endif -%}
+    </div>
+
+    <div class="product-info">
+      <h1 class="u-text-style-h1">{{ product.title }}</h1>
+
+      <div class="product-price">
+        {{ product.price | money }}
+      </div>
+
+      {%- form 'product', product -%}
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+
+        <div class="product-quantity">
+          <label for="Quantity">{{ 'products.product.quantity' | t }}</label>
+          <input type="number" id="Quantity" name="quantity" value="1" min="1">
+        </div>
+
+        <button type="submit" class="button_primary" {% unless product.available %}disabled{% endunless %}>
+          {%- if product.available -%}
+            {{ 'products.product.add_to_cart' | t }}
+          {%- else -%}
+            {{ 'products.product.sold_out' | t }}
+          {%- endif -%}
+        </button>
+      {%- endform -%}
+
+      <div class="product-description w-richtext">
+        {{ product.description }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product Page",
+  "settings": []
+}
+{% endschema %}

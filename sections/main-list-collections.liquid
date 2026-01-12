@@ -1,0 +1,28 @@
+<section class="collections-page u-container">
+  <h1 class="u-text-style-h1">{{ 'collections.general.title' | t }}</h1>
+
+  <div class="collections-grid">
+    {%- for collection in collections -%}
+      <div class="collection-card">
+        <a href="{{ collection.url }}" class="collection-card-link">
+          {%- if collection.image -%}
+            <img
+              src="{{ collection.image | image_url: width: 400 }}"
+              alt="{{ collection.image.alt | escape }}"
+              loading="lazy"
+              class="collection-card-image"
+            >
+          {%- endif -%}
+          <h3 class="collection-card-title">{{ collection.title }}</h3>
+        </a>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collections List",
+  "settings": []
+}
+{% endschema %}

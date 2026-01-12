@@ -1,0 +1,130 @@
+{%- comment -%}
+  Footer section - From Webflow export
+  TODO: Extract full footer from webflow-export/index.html lines 2776-2962
+{%- endcomment -%}
+
+<footer class="footer_wrap u-background-4">
+  <h2 class="footer_title u-sr-only">{{ 'footer.title' | t }}</h2>
+  <div class="footer_contain u-container">
+    <div data-medium-columns="1" class="footer_layout u-grid-custom">
+      <div class="footer_content">
+        <a aria-label="Go to the homepage" href="{{ routes.root_url }}" class="footer_logo_wrap w-inline-block">
+          <img src="{{ 'logo_zh.svg' | asset_url }}" loading="lazy" alt="{{ shop.name }}" class="footer_logo">
+        </a>
+
+        <div class="footer_social_wrap">
+          <div role="list" class="footer_social_list">
+            {%- if settings.social_facebook_link != blank -%}
+              <div role="listitem" class="footer_social_item">
+                <a aria-label="{{ 'general.social.facebook' | t }}" href="{{ settings.social_facebook_link }}" target="_blank" class="footer_social_link w-inline-block">
+                  <svg width="100%" viewbox="0 0 64 64" aria-hidden="true" class="u-svg">
+                    <path fill="currentColor" d="M34.1,47V33.3h4.6l0.7-5.3h-5.3v-3.4c0-1.5,0.4-2.6,2.6-2.6l2.8,0v-4.8c-0.5-0.1-2.2-0.2-4.1-0.2 c-4.1,0-6.9,2.5-6.9,7V28H24v5.3h4.6V47H34.1z"></path>
+                  </svg>
+                </a>
+              </div>
+            {%- endif -%}
+
+            {%- if settings.social_twitter_link != blank -%}
+              <div role="listitem" class="footer_social_item">
+                <a aria-label="{{ 'general.social.twitter' | t }}" href="{{ settings.social_twitter_link }}" target="_blank" class="footer_social_link w-inline-block">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 24 24" fill="none" class="u-svg">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" fill="currentColor"></path>
+                  </svg>
+                </a>
+              </div>
+            {%- endif -%}
+
+            {%- if settings.social_youtube_link != blank -%}
+              <div role="listitem" class="footer_social_item">
+                <a aria-label="{{ 'general.social.youtube' | t }}" href="{{ settings.social_youtube_link }}" target="_blank" class="footer_social_link w-inline-block">
+                  <svg width="100%" viewbox="0 0 48 48" aria-hidden="true" class="u-svg">
+                    <path fill="currentColor" d="M33.7,15.9H14.3c-2.5,0-4.5,2-4.5,4.4v7c0,2.4,2,4.4,4.5,4.4h19.4c2.5,0,4.5-2,4.5-4.4v-7 C38.2,17.9,36.1,15.9,33.7,15.9z M21.7,28.1v-8.5l7.4,4.3L21.7,28.1z"></path>
+                  </svg>
+                </a>
+              </div>
+            {%- endif -%}
+
+            {%- if settings.social_instagram_link != blank -%}
+              <div role="listitem" class="footer_social_item">
+                <a aria-label="{{ 'general.social.instagram' | t }}" href="{{ settings.social_instagram_link }}" target="_blank" class="footer_social_link w-inline-block">
+                  <svg viewbox="0 0 56 56" width="100%" aria-hidden="true" class="u-svg">
+                    <path fill="currentColor" d="M28.0,18.9c-5,0-9.1,4.1-9.1,9.1s4.1,9.1,9.1,9.1s9.1-4.1,9.1-9.1S33,18.9,28.0,18.9z M28.0,33.9 c-3.3,0-5.9-2.7-5.9-5.9s2.7-5.9,5.9-5.9s5.9,2.7,5.9,5.9S31.3,33.9,28.0,33.9z M37.6,18.5c0,1.2-0.9,2.1-2.1,2.1 c-1.2,0-2.1-0.9-2.1-2.1s0.9-2.1,2.1-2.1C36.6,16.4,37.6,17.4,37.6,18.5z M43.2,20.6c-0.1-2.8-0.7-5.2-2.5-7.1 c-1.8-1.8-4.3-2.4-7.1-2.5c-2.9-0.2-11.5-0.2-14.3,0c-2.8,0.1-5.2,0.7-7.1,2.5c-1.8,1.8-2.4,4.3-2.5,7.1c-0.2,2.9-0.2,11.5,0,14.3 c0.1,2.8,0.7,5.2,2.5,7.1c1.8,1.8,4.3,2.4,7.1,2.5c2.9,0.2,11.5,0.2,14.3,0c2.8-0.1,5.2-0.7,7.1-2.5c1.8-1.8,2.4-4.3,2.5-7.1 C43.4,32,43.4,23.4,43.2,20.6z M39.5,38.1c-0.6,1.5-1.8,2.7-3.3,3.3c-2.3,0.9-7.7,0.7-10.2,0.7s-8,0.2-10.2-0.7 c-1.5-0.6-2.7-1.8-3.3-3.3c-0.9-2.3-0.7-7.7-0.7-10.2s-0.2-8,0.7-10.2c0.6-1.5,1.8-2.7,3.3-3.3c2.3-0.9,7.7-0.7,10.2-0.7 s8-0.2,10.2,0.7c1.5,0.6,2.7,1.8,3.3,3.3c0.9,2.3,0.7,7.7,0.7,10.2S40.4,35.9,39.5,38.1z"></path>
+                  </svg>
+                </a>
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+
+      <div class="footer_links_wrap">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'menu' -%}
+              <section data-trigger="group" class="footer_group_wrap" {{ block.shopify_attributes }}>
+                <h3 class="footer_group_title u-text-style-h6 u-margin-bottom-text">{{ block.settings.heading }}</h3>
+                <div role="list" class="footer_group_list">
+                  {%- for link in block.settings.menu.links -%}
+                    <div data-trigger="hover-other focus-other" role="listitem" class="footer_group_item">
+                      <a href="{{ link.url }}" class="footer_link_wrap w-inline-block">
+                        <div class="footer_link_text u-text-style-small">{{ link.title }}</div>
+                      </a>
+                    </div>
+                  {%- endfor -%}
+                </div>
+              </section>
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    </div>
+
+    <div class="footer_bottom">
+      <div class="footer_copyright u-text-style-small">
+        &copy; <span data-dynamic-year>{{ 'now' | date: '%Y' }}</span> {{ shop.name }}. {{ 'footer.copyright' | t }}.
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "menu",
+      "name": "Menu",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Quick Links"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu",
+          "default": "footer"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "menu",
+        "settings": {
+          "heading": "Quick Links"
+        }
+      }
+    ]
+  }
+}
+{% endschema %}
